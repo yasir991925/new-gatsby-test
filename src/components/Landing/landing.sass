@@ -1,0 +1,44 @@
+.Landing__heading
+	margin: 0
+	font-size: 10rem
+	text-align: center
+
+.Landing__tag
+	text-align: center
+	font-weight: normal
+	font-size: 2rem
+	position: relative
+	&::after
+		content: ""
+		position: absolute
+		transform-origin: center center
+		left: -58%
+		bottom: 18%
+		width: 98vw
+		height: 1px
+		background: #ebebeb
+		z-index: -1
+
+.Landing__start_button
+	border: 1px solid #111
+	background: none
+	border-radius: 50px
+	overflow: hidden
+	display: flex
+	align-items: center
+	padding: 0
+	cursor: pointer
+	.text
+		font-size: 1.2rem
+		margin: 0px 20px 0px 40px
+	.circle
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-content: center
+		margin: 5px
+		margin-left: 0
+		padding: 15px
+		border-radius: 100px
+		background: #111
+		color: #fefefe
