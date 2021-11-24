@@ -5,6 +5,7 @@ import Landing from "../components/Landing"
 import Services from "../components/Services"
 import FadeEffectFiller from "../components/FadeEffectFiller"
 import Projects from "../components/Projects"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <FadeEffectFiller />
       <Projects />
+      <Footer />
     </div>
   )
 }

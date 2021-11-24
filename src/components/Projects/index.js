@@ -4,6 +4,7 @@ import "./project.sass"
 import { project_data } from "./data"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 // ------------------------------------------------
 // PROJECTS (MAIN COMPONENT)
@@ -11,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 function Projects() {
   gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollToPlugin)
   const [state, changeState] = useState("All")
   const animating = useRef(false)
   const tl = new gsap.timeline()
@@ -48,6 +50,9 @@ function Projects() {
 
   const changeStateWrapper = value => {
     if (animating.current || value == state) return
+    gsap.to(window, {
+      scrollTo: { y: "#ProjectBoard", offsetY: 100 },
+    })
     animateProjectTilesOut(() => {
       changeState(value)
       ScrollTrigger.refresh()
@@ -132,7 +137,11 @@ const ProjectBoard = ({ data, active }) => {
     )
   }, [active])
 
-  return <div className="ProjectBoard">{renderProjectTiles()}</div>
+  return (
+    <div className="ProjectBoard" id="ProjectBoard">
+      {renderProjectTiles()}
+    </div>
+  )
 }
 
 // ------------------------------------------------
