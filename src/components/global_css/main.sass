@@ -17,9 +17,12 @@ body
 	font-family: "Inter",monospace
 	font-weight: 400
 	position: relative
+	background: #fefefe
 
 .section
+	position: relative
 	margin: 10% 0
+	overflow: hidden
 
 .accent, .accent_heading
 	font-family: 'Neutral Face', monospace
@@ -38,6 +41,7 @@ body
 	flex-direction: column
 	justify-content: center
 	align-items: center
+	flex-wrap: wrap
 
 .util_flex_h
 	flex-direction: row
@@ -107,8 +111,14 @@ body
 .radial3
 	background: conic-gradient(from 150deg at 50% 50%, #11225f, #142563, #1b2d6d, #293b7c, #3d4f8f, #5868a4, #7886ba, #9ca7cf, #c0c7e2, #e0e4f1, #f6f8fb, #ffffff)
 
+.w-80
+	width: 80vw
+
 .ms
 	margin: 0 60px
+
+.mr
+	margin-right: 60px
 
 .mt-2
 	margin-top: 2%
@@ -119,27 +129,18 @@ body
 .mtb-10
 	margin: 10% 0
 
+.mtb-30
+	margin: 30% 0
+
+.mb-20
+	margin-bottom: 20%
+
+.bold
+	font-weight: bold
+
 .arrow_black
 	path
 		fill: #111
 a
 	cursor: pointer
 	font-size: 1.5rem
-
-.super_link_container
-	position: relative
-	cursor: pointer
-	&:hover
-		color: #888
-
-.super_link
-	position: relative
-	font-size: 1.125rem
-
-.super_script_text
-	position: absolute
-	transform-origin: center center
-	top: -50%
-	right: 0
-	font-size: 0.65rem
-	font-weight: bold

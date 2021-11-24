@@ -1,10 +1,15 @@
 import React from "react"
+import "./superScript.sass"
 
-const SuperScript = ({ text, super_script, styleClass }) => {
+const SuperScript = ({ text, super_script, styleClass, onClick, active }) => {
   return (
     <span
+      onClick={onClick}
       className={
-        "super_link_container" + " " + (styleClass ? styleClass.join(" ") : "")
+        "super_link_container" +
+        " " +
+        (styleClass ? styleClass.join(" ") : "") +
+        (active ? " bold" : "")
       }
     >
       <span className="super_link">

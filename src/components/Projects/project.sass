@@ -1,7 +1,40 @@
+.Project__project_controller
+	left: 50%
+	transform-origin: center center
+	transform: translateX(-50%)
+	position: relative
+	z-index: 10
+
 .Project__project_controller__group
-	padding: 2%
+	padding: 30px
 	border-radius: 10px
-	margin: 0 auto
-	box-shadow: 0px 30px 80px -32px rgb(0 0 0 / 79%)
-	-webkit-box-shadow: 0px 30px 80px -32px rgb(0 0 0 / 79%)
-	-moz-box-shadow: 0px 30px 80px -32px rgb(0 0 0 / 79%)
+	background: #fff
+	border: 1px solid #cfcfcf
+
+.ProjectBoard
+	margin: 10% 30px
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+	grid-gap: 20px
+
+.ProjectTile
+	margin-bottom: 10%
+	opacity: 0
+
+.ProjectTitle__image_container
+	cursor: pointer
+	position: relative
+	overflow: hidden
+	img
+		position: relative
+		width: 120%
+		transition: opacity 0.4s
+	&:hover
+		opacity: 0.8
+
+.ProjectTile__content
+	display: flex
+	flex-direction: column
+	margin-top: 20px
+	span:last-child
+		color: #818181

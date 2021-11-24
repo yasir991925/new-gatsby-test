@@ -19,6 +19,7 @@
     "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-sass": "^5.2.0",
     "gatsby-plugin-styled-components": "^5.2.0",
+    "gsap": "^3.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.43.4",

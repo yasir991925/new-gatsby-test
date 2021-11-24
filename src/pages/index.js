@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Nav from "../components/NavBar"
 import "../components/global_css/main.sass"
 import Landing from "../components/Landing"
@@ -8,11 +8,11 @@ import Projects from "../components/Projects"
 
 export default function Home() {
   return (
-    <div>
+    <div className="App">
       <Nav />
       <Landing />
       <Services />
-      <FadeEffectFiller text="with over 30+ years of experience we have created some the most beautiful work" />
+      <FadeEffectFiller />
       <Projects />
     </div>
   )
