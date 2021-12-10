@@ -12,3 +12,59 @@
 
 .navigation__link
 	font-size: 1.125rem
+
+.ham
+	cursor: pointer
+
+.navigation_overlay
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+	z-index: 1000
+	display: grid
+	grid-template-columns: 60% 40%
+	color: #111
+	transform-origin: 50% 0%
+	background: #ffe7cc
+	-webkit-user-select: none
+	-ms-user-select: none
+	user-select: none
+	transform: scaleY(0)
+
+.nav_overlay__link_section, .nav_overlay__info_section
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+.nav_overlay__link_section
+	padding-left: 20%
+	h1
+		position: relative
+		margin: 20px
+		transition: all 0.3s
+		&::before
+			position: absolute
+			transition: all 0.3s
+			top: 0
+			left: 0
+			content: '/'
+			opacity: 0
+	a
+		font-size: 2rem
+		&:hover h1::before
+			left: -10%
+			opacity: 1
+		&:hover h1
+			transform: translateX(10%)
+
+.nav_overlay_address_group
+	font-family: 'Inter'
+	margin: 50px 0px
+	max-width: 300px
+	h3
+		font-weight: 400
+		font-size: 1.8rem
+.ani
+	opacity: 0

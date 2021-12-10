@@ -15,7 +15,7 @@ function Projects() {
   gsap.registerPlugin(ScrollToPlugin)
   const [state, changeState] = useState("All")
   const animating = useRef(false)
-  const tl = new gsap.timeline()
+  const tl = gsap.timeline()
 
   useEffect(() => {
     gsap.to(".Project__project_controller__group", {
@@ -31,14 +31,20 @@ function Projects() {
       boxShadow: "0px 30px 80px -32px rgb(0 0 0 / 79%)",
       border: "none",
     })
+  }, [])
 
+  const animteTilesXAxis = () => {
     gsap.to(gsap.utils.toArray(".ProjectTitle__image_container__image"), {
       scrollTrigger: {
         trigger: ".ProjectBoard",
-        scrub: true,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+        markers: true,
       },
+      x: "-20%",
     })
-  }, [])
+  }
 
   const animateProjectTilesOut = cb => {
     tl.to(".ProjectTile", {
@@ -56,7 +62,7 @@ function Projects() {
   }
 
   const changeStateWrapper = value => {
-    if (animating.current || value == state) return
+    if (animating.current || value === state) return
     gsap.to(window, {
       scrollTo: { y: "#ProjectBoard", offsetY: 100 },
     })
@@ -72,7 +78,7 @@ function Projects() {
       <ProjectController changeState={changeStateWrapper} active={state} />
       <ProjectBoard
         active={state}
-        data={project_data.filter(d => d.type == state || state === "All")}
+        data={project_data.filter(d => d.type === state || state === "All")}
       />
     </div>
   )
@@ -195,7 +201,7 @@ const ProjectBoard = ({ data, active }) => {
 const ProjectTile = ({ img_src, name, area, type }) => {
   return (
     <div className="ProjectTile">
-      <div className="ProjectTitle__image_container util_flex">
+      <div className="ProjectTitle__image_container">
         <img src={img_src} className="ProjectTitle__image_container__image" />
       </div>
       <div className="ProjectTile__content">
