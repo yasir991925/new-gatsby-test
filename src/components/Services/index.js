@@ -1,11 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./services.sass"
 import Arrow from "../global_css/static/Arrow.svg"
 import { Link } from "gatsby"
+import { gsap } from "gsap"
 
 function Services() {
+  const allowed = [2, 3, 4, 5]
+  useEffect(() => {
+    const tl = new gsap.timeline()
+    tl.to(gsap.utils.toArray(".radial"), {
+      scrollTrigger: {
+        trigger: ".service_section",
+        start: "top center",
+        end: "bottom top",
+        scrub: 1,
+        toggleActions: "play none none none",
+      },
+      rotation: 30,
+      transformOrigin: "50% 50%",
+      stagger: 0.1,
+      ease: "Circ.easeOut",
+    })
+  })
+
   return (
-    <div className="section util_flex">
+    <div className="section util_flex service_section">
       <h1 className="accent_heading">
         Amazing things
         <br />
@@ -14,7 +33,7 @@ function Services() {
 
       <div className="services_grid utils_m_auto">
         <div className="util_flex">
-          <div className="radial1" />
+          <div className="radial radial1" />
         </div>
         <div className="Services__group">
           <div>
@@ -35,7 +54,7 @@ function Services() {
 
       <div className="services_grid utils_m_auto mt-10">
         <div className="util_flex">
-          <div className="radial2" />
+          <div className="radial radial2" />
         </div>
         <div className="Services__group">
           <div>
@@ -56,7 +75,7 @@ function Services() {
 
       <div className="services_grid utils_m_auto mt-10">
         <div className="util_flex">
-          <div className="radial3" />
+          <div className="radial radial3" />
         </div>
         <div className="Services__group">
           <div>

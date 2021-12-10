@@ -31,6 +31,13 @@ function Projects() {
       boxShadow: "0px 30px 80px -32px rgb(0 0 0 / 79%)",
       border: "none",
     })
+
+    gsap.to(gsap.utils.toArray(".ProjectTitle__image_container__image"), {
+      scrollTrigger: {
+        trigger: ".ProjectBoard",
+        scrub: true,
+      },
+    })
   }, [])
 
   const animateProjectTilesOut = cb => {
@@ -120,6 +127,39 @@ const ProjectController = ({ changeState, active }) => {
 // ------------------------------------------------
 
 const ProjectBoard = ({ data, active }) => {
+  const rows = 3
+  const renderInRow = data => {
+    return (
+      <div className="col">
+        {data.map((d, i) => (
+          <ProjectTile
+            idx={i}
+            img_src={d.img}
+            name={d.name}
+            area={d.area}
+            type={d.type}
+            key={i}
+          />
+        ))}
+      </div>
+    )
+  }
+
+  const renderProjectTiles2 = rows => {
+    const n = Math.floor(data.length / rows)
+    const arr = []
+    const count = new Array(rows).fill(n)
+    for (let i = 0; i < data.length % rows; i++) {
+      count[i] += 1
+    }
+    let prev = 0
+    for (let i = 0; i < rows; i++) {
+      arr.push(renderInRow(data.slice(prev, prev + count[i])))
+      prev += count[i]
+    }
+    return arr
+  }
+
   const renderProjectTiles = () => {
     return data.map((d, i) => (
       <ProjectTile img_src={d.img} name={d.name} area={d.area} key={i} />
@@ -138,8 +178,12 @@ const ProjectBoard = ({ data, active }) => {
   }, [active])
 
   return (
-    <div className="ProjectBoard" id="ProjectBoard">
-      {renderProjectTiles()}
+    <div
+      className="ProjectBoard"
+      id="ProjectBoard"
+      style={{ gridTemplateColumns: `repeat(${rows}, 1fr)` }}
+    >
+      {renderProjectTiles2(rows)}
     </div>
   )
 }
@@ -148,23 +192,24 @@ const ProjectBoard = ({ data, active }) => {
 // PROJECT TILE
 // ------------------------------------------------
 
-const ProjectTile = ({ img_src, name, area }) => {
+const ProjectTile = ({ img_src, name, area, type }) => {
   return (
-    <div
-      className="ProjectTile"
-      style={{ gridColumn: `span ${Math.ceil(Math.random() * 4) + 2}` }}
-    >
-      <div
-        className="ProjectTitle__image_container util_flex"
-        style={{ maxHeight: `${Math.ceil(Math.random() * 30) + 30}vh` }}
-      >
+    <div className="ProjectTile">
+      <div className="ProjectTitle__image_container util_flex">
         <img src={img_src} className="ProjectTitle__image_container__image" />
       </div>
       <div className="ProjectTile__content">
-        <span>{name} /</span>
-        <span>
-          {area} m<sup>2</sup>
-        </span>
+        <h1 className="project_t">{name}</h1>
+        <div className="project_m">
+          <div>Type - {type}</div>
+          <div>
+            Area - {area}m<sup>2</sup>
+          </div>
+        </div>
+        <div className="seperate">
+          <h2 className="accent">Visit</h2>
+          <h2 className="project_y accent">2019</h2>
+        </div>
       </div>
     </div>
   )

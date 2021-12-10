@@ -14,27 +14,41 @@
 .ProjectBoard
 	margin: 10% 30px
 	display: grid
-	grid-template-columns: repeat(12, 1fr)
-	grid-gap: 20px
+	grid-gap: 60px
 
 .ProjectTile
-	margin-bottom: 10%
+	margin-bottom: 20%
 	opacity: 0
 
 .ProjectTitle__image_container
 	cursor: pointer
 	position: relative
 	overflow: hidden
+	max-height: 100vh
+	transition: all 0.3s
 	img
 		position: relative
 		width: 120%
-		transition: opacity 0.4s
-	&:hover
-		opacity: 0.8
 
 .ProjectTile__content
 	display: flex
 	flex-direction: column
-	margin-top: 20px
-	span:last-child
-		color: #818181
+	margin-top: 5%
+	font-family: 'Inter'
+	.project_t
+		font-weight: 400
+		margin: 0
+		font-size: 1.3em
+		word-break: break-word
+	.project_m
+		margin: 20px 0px
+	.project_y
+		margin-bottom: 0
+		font-size: 3rem
+		color: #eee
+
+.seperate
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: flex-end
