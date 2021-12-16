@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
-import Nav from "../components/NavBar"
+import React from "react"
 import "../components/global_css/main.sass"
+import Nav from "../components/NavBar"
 import Landing from "../components/Landing"
 import Services from "../components/Services"
 import FadeEffectFiller from "../components/FadeEffectFiller"

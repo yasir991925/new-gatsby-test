@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import "./services.sass"
-import Arrow from "../global_css/static/Arrow.svg"
+import Arrow from "/static/Arrow.svg"
 import { Link } from "gatsby"
 import { gsap } from "gsap"
 
