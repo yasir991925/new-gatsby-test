@@ -17,28 +17,37 @@ const ProjectBoard = ({ data, active, rows }) => {
   }
 
   const animateOpen = (b, id, cb) => {
-    gsap.fromTo(
-      ".imageOverlay",
-      {
-        position: "fixed",
-        left: b.x,
-        top: b.y,
-      },
-      {
-        position: "fixed",
-        width: "100vw",
-        height: "110vh",
-        left: 0,
-        top: 0,
-        duration: 0.8,
-        ease: "Expo.easeOut",
-        onComplete: () => {
-          if (typeof cb === "function") {
-            cb(id)
-          }
+    const tl = gsap.timeline()
+    tl.set(".background-overlay", {
+      zIndex: 1500,
+    })
+      .to(".background-overlay", {
+        backgroundColor: "#fefefe",
+        duration: 0.4,
+      })
+      .fromTo(
+        ".imageOverlay",
+        {
+          position: "fixed",
+          left: b.x,
+          top: b.y,
         },
-      }
-    )
+        {
+          position: "fixed",
+          width: "100%",
+          height: "100vh",
+          left: 0,
+          top: 0,
+          duration: 2,
+          ease: "Expo.easeInOut",
+          onComplete: () => {
+            if (typeof cb === "function") {
+              cb(id)
+            }
+          },
+        },
+        -0.2
+      )
   }
 
   const renderInRow = data => {
@@ -93,6 +102,7 @@ const ProjectBoard = ({ data, active, rows }) => {
       style={{ gridTemplateColumns: `repeat(${rows}, 1fr)` }}
     >
       {renderProjectTiles(rows)}
+      <div className="background-overlay" />
     </div>
   )
 }

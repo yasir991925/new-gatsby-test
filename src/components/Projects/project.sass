@@ -36,9 +36,6 @@
 	overflow: hidden
 	max-height: 80vh
 	transition: all 0.3s
-	img
-		position: relative
-		width: 120%
 
 .ProjectTile__content
 	display: flex
@@ -61,3 +58,13 @@
 	flex-direction: row
 	justify-content: space-between
 	align-items: flex-end
+
+.background-overlay
+	position: fixed
+	user-select: none
+	pointer-events: none
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	z-index: -100

@@ -1,5 +1,6 @@
 import React from "react"
 
+import "../components/global_css/main.sass"
 import "./project_template.sass"
 
 import { graphql } from "gatsby"
@@ -10,14 +11,15 @@ import Img from "gatsby-image"
 // ----------------------
 
 function Template({ data }) {
-  console.log(data)
   const { title, featureImg } = data.markdownRemark.frontmatter
   return (
-    <div>
+    <div className="Project_T">
       <div className="Project_T_img_container">
         <Img fluid={featureImg.childImageSharp.fluid} />
       </div>
-      <h1>{title}</h1>
+      <div>
+        <h1 className="Landing__heading accent">{title}</h1>
+      </div>
     </div>
   )
 }
