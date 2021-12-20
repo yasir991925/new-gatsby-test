@@ -1,19 +1,21 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
+import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 // ------------------------------------------------
 // PROJECT TILE
 // ------------------------------------------------
 
 const ProjectTile = props => {
-  const { img_src, name, area, type, openProject } = props
+  const { fluid, name, area, type, openProject, slug } = props
   const [isProject, setOpenProject] = useState(false)
   const ImageOverlayDOM = useRef(null)
   const projectRef = useRef(null)
 
   useEffect(() => {
     if (isProject) {
-      openProject(ImageOverlayDOM.current.getBoundingClientRect(), props.id)
+      openProject(ImageOverlayDOM.current.getBoundingClientRect(), props.slug)
     }
   }, [isProject])
 
@@ -36,10 +38,10 @@ const ProjectTile = props => {
       overflow: hidden;
       z-index: 3000;
     `
-
     return (
       <ImageContainerDOM ref={ImageOverlayDOM} className="imageOverlay">
-        <img src={img_src} style={{ position: "relative", width: "120%" }} />
+        <Img fluid={fluid} style={{ position: "relative", width: "120%" }} />
+        {/* <img src={fluid.src} style={{ position: "relative", width: "120%" }} /> */}
       </ImageContainerDOM>
     )
   }
@@ -53,9 +55,13 @@ const ProjectTile = props => {
           ref={projectRef}
           onClick={openProjectFn}
         >
-          <img src={img_src} className="ProjectTitle__image_container__image" />
+          {/* <img src={img_src} className="ProjectTitle__image_container__image" /> */}
+
+          <Link to={`/projects/${slug}`} onClick={e => e.preventDefault()}>
+            <Img fluid={fluid} />
+          </Link>
         </div>
-        <div className="ProjectTile__content" onClick={openProjectFn}>
+        <div className="ProjectTile__content">
           <h1 className="project_t">{name}</h1>
           <div className="project_m">
             <div>Type - {type}</div>

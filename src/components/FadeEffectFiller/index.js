@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import { gsap } from "gsap"
 
 const text =
   "with over 30+ years of experience we have created some the most beautiful work"
 
 function FadeEffectFiller() {
-  const el_ref = useRef(null)
   const allowed = [2, 3, 4, 5]
   useEffect(() => {
     const tl = new gsap.timeline()
@@ -27,7 +26,7 @@ function FadeEffectFiller() {
         ease: "Circ.easeOut",
       }
     )
-  }, [])
+  }, [allowed])
 
   const renderText = () => {
     return text.split(" ").map((t, i) => (

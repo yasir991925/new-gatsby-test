@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { navigate } from "gatsby"
 import ProjectTile from "./ProjectTile"
@@ -7,9 +7,7 @@ import ProjectTile from "./ProjectTile"
 // PROJECT BOARD
 // ------------------------------------------------
 
-const ProjectBoard = ({ data, active }) => {
-  const rows = 3
-
+const ProjectBoard = ({ data, active, rows }) => {
   const changePage = id => {
     navigate(`/projects/${id}`)
   }
@@ -49,11 +47,12 @@ const ProjectBoard = ({ data, active }) => {
         {data.map((d, i) => (
           <ProjectTile
             id={d.id}
-            img_src={d.img}
+            fluid={d.fluid}
             name={d.name}
             area={d.area}
             type={d.type}
             key={d.id}
+            slug={d.slug}
             openProject={openProject}
           />
         ))}

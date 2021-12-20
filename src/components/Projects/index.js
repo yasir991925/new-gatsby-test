@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
 import "./project.sass"
-import { project_data } from "./data"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -11,7 +10,13 @@ import ProjectController from "./components/ProjectController"
 // PROJECTS (MAIN COMPONENT)
 // ------------------------------------------------
 
-function Projects() {
+function Projects({ data }) {
+  const project_data = filterDataFromGraphQLForBoard(
+    data.allMarkdownRemark.nodes
+  )
+  const controller_data = filterDataFromGraphQLForController(
+    data.allMarkdownRemark.nodes
+  )
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin)
   const [state, changeState] = useState("All")
@@ -76,8 +81,13 @@ function Projects() {
   return (
     <div className="section project_section">
       <h1 className="accent_heading ">Featured Projects</h1>
-      <ProjectController changeState={changeStateWrapper} active={state} />
+      <ProjectController
+        changeState={changeStateWrapper}
+        active={state}
+        data={controller_data}
+      />
       <ProjectBoard
+        rows={3}
         active={state}
         data={project_data.filter(d => d.type === state || state === "All")}
       />
@@ -86,3 +96,45 @@ function Projects() {
 }
 
 export default Projects
+
+// -----------------------
+// helper functions
+// -----------------------
+
+const filterDataFromGraphQLForController = data => {
+  const counter = {}
+  let all_count = 0
+  data.forEach(d => {
+    if (!counter[d.frontmatter.type]) {
+      counter[d.frontmatter.type] = 0
+    }
+    counter[d.frontmatter.type] += 1
+    all_count += 1
+  })
+  counter["All"] = all_count
+  const ans = []
+  Object.entries(counter).forEach(e => {
+    ans.push({
+      type: e[0],
+      count: e[1],
+    })
+  })
+  ans.sort((a, b) => (a.type <= b.type ? -1 : 1))
+  return ans
+}
+
+const filterDataFromGraphQLForBoard = data => {
+  const res = []
+  data.forEach(d => {
+    res.push({
+      id: d.id,
+      slug: d.frontmatter.slug,
+      name: d.frontmatter.client,
+      type: d.frontmatter.type,
+      year: d.frontmatter.year,
+      area: d.frontmatter.area,
+      fluid: d.frontmatter.featureImg.childImageSharp.fluid,
+    })
+  })
+  return res
+}

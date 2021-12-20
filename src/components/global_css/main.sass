@@ -1,4 +1,5 @@
 @imoprt "/static/fonts/fonts.css"
+@import "/static/css/colors.css"
 
 @mixin size($width, $height: $width)
 	width: $width
@@ -16,7 +17,8 @@ body
 	font-family: "Inter",monospace
 	font-weight: 400
 	position: relative
-	background: #fefefe
+	color: var(--p-color)
+	background: var(--back-color)
 
 .section
 	position: relative
@@ -99,7 +101,7 @@ body
 	font-size: 2rem
 
 .para
-	color: #818181
+	color: var(--s-color)
 
 .radial1,.radial2, .radial3
 	@include size(20rem)
@@ -144,9 +146,9 @@ body
 
 .arrow_black
 	path
-		fill: #111
+		fill: var(--p-color)
 a
-	color: #111
+	color: var(--p-color)
 	text-decoration: none
 	cursor: pointer
 	font-size: 1.5rem

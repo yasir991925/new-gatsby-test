@@ -42,7 +42,7 @@ function Services() {
               We have innovated the process to create stunning modern
               architectural designs
             </p>
-            <Link>
+            <Link to="/">
               Explore{" "}
               <span>
                 <Arrow className="arrow_black" />
@@ -63,7 +63,7 @@ function Services() {
               With one of the best designers we create the most iconic and
               unique experiences
             </p>
-            <Link className="link">
+            <Link className="link" to="/">
               Explore{" "}
               <span>
                 <Arrow className="arrow_black" />
@@ -84,7 +84,7 @@ function Services() {
               We start where innovative engineering meets most innvative art to
               build the strongest art pieces
             </p>
-            <Link>
+            <Link to="/">
               Explore{" "}
               <span>
                 <Arrow className="arrow_black" />

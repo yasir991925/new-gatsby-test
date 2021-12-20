@@ -1,3 +1,5 @@
+@import "/static/css/colors.css"
+
 .Project__project_controller
 	left: 50%
 	transform-origin: center center
@@ -8,8 +10,8 @@
 .Project__project_controller__group
 	padding: 30px
 	border-radius: 10px
-	background: #fff
-	border: 1px solid #cfcfcf
+	background: var(--back-color)
+	border: 1px solid var(--border-color)
 
 .ProjectBoard
 	margin: 10% 30px
@@ -19,6 +21,10 @@
 .ProjectTile
 	margin-bottom: 20%
 	opacity: 0
+	color: var(--b-color)
+	transition: color 0.68s
+	&:hover
+		color: var(--p-color)
 
 .ProjectTitle__image_container
 	display: flex
@@ -49,7 +55,6 @@
 	.project_y
 		margin-bottom: 0
 		font-size: 3rem
-		color: #eee
 
 .seperate
 	display: flex
