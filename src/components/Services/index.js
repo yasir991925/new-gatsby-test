@@ -79,7 +79,7 @@ function Services() {
         </div>
         <div className="Services__group">
           <div>
-            <p className="heading3">Constuction* need to change</p>
+            <p className="heading3">PMC</p>
             <p className="para">
               We start where innovative engineering meets most innvative art to
               build the strongest art pieces
