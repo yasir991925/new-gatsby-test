@@ -11,9 +11,9 @@
   --back-black: #121212;
   --border-black: #232323;
 
-  --p-color: var(--p-black);
-  --s-color: var(--s-black);
-  --b-color: var(--b-black);
-  --back-color: var(--back-black);
-  --border-color: var(--border-black);
+  --p-color: var(--p-white);
+  --s-color: var(--s-white);
+  --b-color: var(--b-white);
+  --back-color: var(--back-white);
+  --border-color: var(--border-white);
 }

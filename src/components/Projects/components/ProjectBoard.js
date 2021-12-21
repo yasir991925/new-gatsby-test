@@ -22,8 +22,9 @@ const ProjectBoard = ({ data, active, rows }) => {
       zIndex: 1500,
     })
       .to(".background-overlay", {
+        backdropFilter: "blur(50px)",
         backgroundColor: "#fefefe",
-        duration: 0.4,
+        duration: 0.8,
       })
       .fromTo(
         ".imageOverlay",
