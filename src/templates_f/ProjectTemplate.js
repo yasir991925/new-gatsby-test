@@ -5,7 +5,6 @@ import "./project_template.sass"
 
 import { graphql } from "gatsby"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Img from "gatsby-image"
 
 // ----------------------
@@ -13,9 +12,7 @@ import Img from "gatsby-image"
 // ----------------------
 
 function Template({ data }) {
-  const { title, featureImg, client } = data.markdownRemark.frontmatter
-
-  gsap.registerPlugin(ScrollTrigger)
+  const { featureImg, client } = data.markdownRemark.frontmatter
   useEffect(() => {
     gsap.to(".Project_T_img_container div", {
       scrollTrigger: {
@@ -23,9 +20,7 @@ function Template({ data }) {
         start: `50% 50%`,
         end: `bottom center`,
         pin: true,
-        pinSpacer: false,
         scrub: 1,
-        markers: true,
       },
       height: "100vh",
       ease: "Sine.easeInOut",
