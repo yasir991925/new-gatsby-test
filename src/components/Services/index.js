@@ -16,7 +16,7 @@ function Services() {
         scrub: 1,
         toggleActions: "play none none none",
       },
-      rotation: 30,
+      rotation: 60,
       transformOrigin: "50% 50%",
       stagger: 0.1,
       ease: "Circ.easeOut",
