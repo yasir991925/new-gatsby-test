@@ -6,12 +6,14 @@ import "./landing.sass"
 function Landing() {
   return (
     <div>
-      <div className="util_flex util_h75">
+      <div className="util_flex util_h90 landing_section">
         <h1 className="Landing__heading accent">
           Vision
           <br />
           Architects
+          <br />
         </h1>
+        <h3 className="Landing__sub_heading accent">& Interior Designers</h3>
         <h2 className="Landing__tag">
           Building the most innovative modern infrastructure
         </h2>

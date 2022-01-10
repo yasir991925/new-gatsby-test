@@ -7,6 +7,7 @@ import Mouse from "/static/Mouse.svg"
 import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
 import Img from "gatsby-image"
 
 // ----------------------
@@ -16,6 +17,7 @@ import Img from "gatsby-image"
 function Template({ data }) {
   const { featureImg, client } = data.markdownRemark.frontmatter
   const img_ref = useRef(null)
+  const mouse_svg_ref = useRef(null)
   useEffect(() => {
     let end = null
     if (img_ref.current) {
@@ -24,6 +26,7 @@ function Template({ data }) {
       )
     }
     gsap.registerPlugin(ScrollTrigger)
+    // gsap.registerPlugin(DrawSVGPlugin)
     gsap.to(".Project_T_img_container div img", {
       scrollTrigger: {
         trigger: ".Project_T_img_container",
@@ -43,6 +46,10 @@ function Template({ data }) {
         ease: "Expo.easeOut",
         delay: el.tagName == "H1" ? 0 : 0.5,
       })
+    })
+    console.log(mouse_svg_ref)
+    gsap.to(mouse_svg_ref.current, {
+      drawSVG: true,
     })
   }, [])
 
@@ -73,6 +80,9 @@ function Template({ data }) {
                 <AnimatedText text={"Area"} class_name="util_op_6" />
                 <AnimatedText text={"134124m"} div_type={"h4"} />
               </div>
+            </div>
+            <div className="center_absolute" ref={mouse_svg_ref}>
+              <Mouse />
             </div>
             <div className="P_T_meta_container">
               <div className="P_T_meta">

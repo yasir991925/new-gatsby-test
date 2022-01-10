@@ -185,3 +185,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Neutral Face";
+  src: url("NeutralFace-Bold.woff2") format("woff2"),
+    url("NeutralFace-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

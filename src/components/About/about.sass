@@ -1,0 +1,75 @@
+.About
+	position: relative
+	font-family: "Inter", sans-serif
+	width: 100%
+	overflow: hidden
+
+.About__section
+	height: 90vh
+	h1
+		margin-top: 50px
+		font-size: 2.5rem
+		max-width: 600px
+
+.about_radial
+	position: absolute
+	transform: scale(5) rotate(-10deg)
+	z-index: -10
+	transform-origin: center center
+
+.Member
+	position: relative
+	display: flex
+	flex-direction: column
+
+.Member__background_name
+	position: absolute
+	top: 50%
+	left: -80%
+	transform: translateY(-50%)
+	z-index: -10
+	span
+		color: #eee
+		white-space: nowrap
+		font-size: 10rem
+
+.Member__image_container
+	width: 90%
+	height: 80vh
+	overflow: hidden
+	border-radius: 1000px
+	img
+		height: 100%
+
+.Member__image_container_img_big
+	transform: translateY(-8%) scale(1.1)
+
+.Member__small
+	width: 80%
+	height: 40vh
+
+.Member__founders
+	row-gap: 100px
+	margin-bottom: 10%
+
+.Member__team
+	column-gap: 80px
+	row-gap: 120px
+
+.Member__content
+	margin-top: 30px
+
+.Member__content__name
+	display: inline-flex
+	margin-bottom: 20px
+
+.Member__content_big
+	position: absolute
+	align-items: flex-start
+	top: 60%
+	left: 105%
+	@media screen and (max-width: 900px)
+		position: relative
+		align-items: center
+		top: auto
+		left: auto
