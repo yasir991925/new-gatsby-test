@@ -15,7 +15,7 @@ export default function Home({ data }) {
       <Landing />
       <Services />
       <FadeEffectFiller />
-      <Projects data={data} />
+      <Projects data={data} landing={true} />
       <Footer />
     </div>
   )
@@ -23,23 +23,22 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allProjectsJson {
       nodes {
-        frontmatter {
-          client
-          featureImg {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+        Role
+        area
+        client
+        slug
+        title
+        type
+        year
+        featureImg {
+          childrenImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
-          area
-          year
-          type
-          slug
         }
-        id
       }
     }
   }

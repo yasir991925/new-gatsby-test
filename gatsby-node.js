@@ -13,22 +13,18 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark {
+      allProjectsJson {
         nodes {
-          frontmatter {
-            slug
-          }
+          slug
         }
       }
     }
   `)
-
-  result.data.allMarkdownRemark.nodes.forEach(node => {
-    console.log(node.frontmatter.slug)
+  result.data.allProjectsJson.nodes.forEach(project => {
     createPage({
-      path: "/projects/" + node.frontmatter.slug,
+      path: "/projects/" + project.slug,
       component: path.resolve("./src/templates_f/ProjectTemplate.js"),
-      context: { slug: node.frontmatter.slug },
+      context: { slug: project.slug },
     })
   })
 }

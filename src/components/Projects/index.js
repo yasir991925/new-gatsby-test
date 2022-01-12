@@ -10,18 +10,17 @@ import ProjectController from "./components/ProjectController"
 // PROJECTS (MAIN COMPONENT)
 // ------------------------------------------------
 
-function Projects({ data }) {
-  const project_data = filterDataFromGraphQLForBoard(
-    data.allMarkdownRemark.nodes
-  )
+function Projects({ data, landing }) {
+  const project_data = filterDataFromGraphQLForBoard(data.allProjectsJson.nodes)
   const controller_data = filterDataFromGraphQLForController(
-    data.allMarkdownRemark.nodes
+    data.allProjectsJson.nodes
   )
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin)
   const [state, changeState] = useState("All")
   const animating = useRef(false)
   const tl = gsap.timeline()
+  const project_image_deviation_y = 5
 
   useEffect(() => {
     gsap.to(".Project__project_controller__group", {
@@ -37,6 +36,32 @@ function Projects({ data }) {
       boxShadow: "0px 30px 80px -32px rgb(0 0 0 / 79%)",
       border: "none",
     })
+    // animate the images in the main product page
+    // gsap.to(
+    //   gsap.utils.toArray(
+    //     ".ProjectTitle__image_container > a > .gatsby-image-wrapper"
+    //   ),
+    //   {
+    //     scrollTrigger: {
+    //       trigger: ".ProjectBoard",
+    //       start: "top center",
+    //       end: "bottom center",
+    //       scrub: 1,
+    //       markers: true,
+    //     },
+    //     y: `-${project_image_deviation_y}%`,
+    //   }
+    // )
+    // gsap.to(gsap.utils.toArray(".ProjectTitle__image_container"), {
+    //   scrollTrigger: {
+    //     trigger: ".ProjectBoard",
+    //     start: "top center",
+    //     end: "bottom center",
+    //     scrub: 1,
+    //     markers: true,
+    //   },
+    //   y: `${project_image_deviation_y}`,
+    // })
   }, [])
 
   const animteTilesXAxis = () => {
@@ -48,7 +73,7 @@ function Projects({ data }) {
         scrub: 1,
         markers: true,
       },
-      x: "-20%",
+      y: "-20%",
     })
   }
 
@@ -80,7 +105,9 @@ function Projects({ data }) {
 
   return (
     <div className="section project_section">
-      <h1 className="accent_heading ">Featured Projects</h1>
+      <h1 className="accent_heading ">
+        {landing ? "Featured Projects" : "Projects"}
+      </h1>
       <ProjectController
         changeState={changeStateWrapper}
         active={state}
@@ -105,10 +132,10 @@ const filterDataFromGraphQLForController = data => {
   const counter = {}
   let all_count = 0
   data.forEach(d => {
-    if (!counter[d.frontmatter.type]) {
-      counter[d.frontmatter.type] = 0
+    if (!counter[d.type]) {
+      counter[d.type] = 0
     }
-    counter[d.frontmatter.type] += 1
+    counter[d.type] += 1
     all_count += 1
   })
   counter["All"] = all_count
@@ -128,12 +155,12 @@ const filterDataFromGraphQLForBoard = data => {
   data.forEach(d => {
     res.push({
       id: d.id,
-      slug: d.frontmatter.slug,
-      name: d.frontmatter.client,
-      type: d.frontmatter.type,
-      year: d.frontmatter.year,
-      area: d.frontmatter.area,
-      fluid: d.frontmatter.featureImg.childImageSharp.fluid,
+      slug: d.slug,
+      name: d.client,
+      type: d.type,
+      year: d.year,
+      area: d.area,
+      fluid: d.featureImg.childrenImageSharp[0].fluid,
     })
   })
   return res

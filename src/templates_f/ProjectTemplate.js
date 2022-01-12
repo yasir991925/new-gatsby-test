@@ -7,7 +7,6 @@ import Mouse from "/static/Mouse.svg"
 import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
 import Img from "gatsby-image"
 
 // ----------------------
@@ -15,7 +14,7 @@ import Img from "gatsby-image"
 // ----------------------
 
 function Template({ data }) {
-  const { featureImg, client } = data.markdownRemark.frontmatter
+  const { featureImg, client, type, area, address } = data.projectsJson
   const img_ref = useRef(null)
   const mouse_svg_ref = useRef(null)
   useEffect(() => {
@@ -26,7 +25,6 @@ function Template({ data }) {
       )
     }
     gsap.registerPlugin(ScrollTrigger)
-    // gsap.registerPlugin(DrawSVGPlugin)
     gsap.to(".Project_T_img_container div img", {
       scrollTrigger: {
         trigger: ".Project_T_img_container",
@@ -47,10 +45,6 @@ function Template({ data }) {
         delay: el.tagName == "H1" ? 0 : 0.5,
       })
     })
-    console.log(mouse_svg_ref)
-    gsap.to(mouse_svg_ref.current, {
-      drawSVG: true,
-    })
   }, [])
 
   return (
@@ -66,19 +60,15 @@ function Template({ data }) {
             <div className="P_T_meta_container">
               <div className="P_T_meta">
                 <AnimatedText text={"Client"} class_name="util_op_6" />
-                <AnimatedText
-                  text={"Goldman Sachs Office#Mountain Park, Denver#L3Z 2F1"}
-                  delimiter="#"
-                  div_type="h4"
-                />
+                <AnimatedText text={address} delimiter="#" div_type="h4" />
               </div>
               <div className="P_T_meta">
                 <AnimatedText text={"Type"} class_name="util_op_6" />
-                <AnimatedText text={"Office"} div_type={"h4"} />
+                <AnimatedText text={type} div_type={"h4"} />
               </div>
               <div className="P_T_meta">
                 <AnimatedText text={"Area"} class_name="util_op_6" />
-                <AnimatedText text={"134124m"} div_type={"h4"} />
+                <AnimatedText text={area + "m"} div_type={"h4"} />
               </div>
             </div>
             <div className="center_absolute" ref={mouse_svg_ref}>
@@ -122,16 +112,20 @@ export default Template
 
 export const query = graphql`
   query projectPageQuery($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        Role
-        title
-        client
-        featureImg {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+    projectsJson(slug: { eq: $slug }) {
+      slug
+      Role
+      address
+      area
+      client
+      id
+      title
+      type
+      year
+      featureImg {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

@@ -67,7 +67,7 @@ function Nav() {
           <Link to="/">
             <h1 className="accent ani">Home</h1>
           </Link>
-          <Link to="/">
+          <Link to="/projects/">
             <h1 className="accent ani">Projects</h1>
           </Link>
           <Link to="/about">
@@ -107,7 +107,9 @@ function Nav() {
           <Link to="/about">
             <span className="navigation__link">About us</span>
           </Link>
-          <SuperScript text={"Projects"} super_script={"144+"} />
+          <Link to="/projects/">
+            <SuperScript text={"Projects"} super_script={"144+"} />
+          </Link>
           <span className="navigation__link">Contact</span>
         </div>
       </div>

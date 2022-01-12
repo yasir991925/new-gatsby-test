@@ -15,7 +15,7 @@ function FadeEffectFiller() {
       {
         scrollTrigger: {
           trigger: ".animate_t1_container",
-          start: "25% center",
+          start: "10% center",
           end: "bottom center",
           scrub: 1,
           toggleActions: "play none none none",

@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   /* Your site config here */
   flags: {
@@ -10,6 +12,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +34,12 @@ module.exports = {
           families: ["Inter", "Neutral Face"],
           urls: ["/fonts/fonts.css"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
       },
     },
   ],
