@@ -82,7 +82,6 @@ function About() {
   return (
     <div className="About">
       <Nav />
-      <div className="radial radial1 about_radial" />
       <div className="util_flex util_text_center accent About__section">
         <h2 className="accent">Our Philosophy</h2>
         <h1 className="accent">

@@ -8,9 +8,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-1",
     "address": "Amaon office#Downtown Street#123141",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/1.jpeg",
     "featureImg": "./images/1.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -21,9 +30,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-2",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/2.jpeg",
     "featureImg": "./images/2.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -34,9 +52,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-3",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/2.jpeg",
     "featureImg": "./images/2.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -47,9 +74,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-9",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/3.jpeg",
     "featureImg": "./images/3.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -60,9 +96,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-4",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/4.jpeg",
     "featureImg": "./images/4.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -73,9 +118,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-5",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/5.jpeg",
     "featureImg": "./images/5.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -86,9 +140,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-6",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/6.jpeg",
     "featureImg": "./images/6.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -99,9 +162,18 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-7",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/2.jpeg",
     "featureImg": "./images/2.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   },
   {
     "title": "Project 2",
@@ -112,8 +184,17 @@
     "Role": "Architecture & Interior Design",
     "slug": "project-8",
     "address": "Goldman Sachs Office#Mountain Park#Denver#L23 G123",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/2.jpeg",
     "featureImg": "./images/2.jpeg",
-    "project-images": []
+    "project_images": [
+      "./images/1.jpeg",
+      "./images/2.jpeg",
+      "./images/3.jpeg",
+      "./images/4.jpeg",
+      "./images/5.jpeg",
+      "./images/6.jpeg",
+      "./images/7.jpeg"
+    ]
   }
 ]

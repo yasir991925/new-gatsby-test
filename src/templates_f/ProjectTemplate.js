@@ -14,7 +14,15 @@ import Img from "gatsby-image"
 // ----------------------
 
 function Template({ data }) {
-  const { featureImg, client, type, area, address } = data.projectsJson
+  const {
+    featureImg,
+    client,
+    type,
+    area,
+    address,
+    project_images,
+    description,
+  } = data.projectsJson
   const img_ref = useRef(null)
   const mouse_svg_ref = useRef(null)
   useEffect(() => {
@@ -44,6 +52,15 @@ function Template({ data }) {
         ease: "Expo.easeOut",
         delay: el.tagName == "H1" ? 0 : 0.5,
       })
+    })
+    gsap.to(".Project_T_content_text", {
+      scrollTrigger: {
+        trigger: ".Project_T__image_container",
+        pin: ".Project_T_content_text",
+        markers: false,
+        start: "top top",
+        end: "bottom bottom",
+      },
     })
   }, [])
 
@@ -97,8 +114,18 @@ function Template({ data }) {
           />
         </div>
       </div>
-      <div className="Project_T_content">
+      {/* <div className="Project_T_content">
         <h1 className="Landing__heading accent">Project Content</h1>
+      </div> */}
+      <div className="Project_T__image_container">
+        <ProjectTImages images={project_images} />
+        <div className="Project_T_content_text">
+          <h1 className="accent">{client}</h1>
+          <p>lorem ipsum</p>
+          <hr />
+          <h4>ok this is good</h4>
+          <p>{description}</p>
+        </div>
       </div>
     </div>
   )
@@ -113,15 +140,23 @@ export default Template
 export const query = graphql`
   query projectPageQuery($slug: String!) {
     projectsJson(slug: { eq: $slug }) {
-      slug
       Role
       address
       area
       client
       id
+      slug
       title
       type
       year
+      description
+      project_images {
+        childrenImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       featureImg {
         childImageSharp {
           fluid {
@@ -132,6 +167,26 @@ export const query = graphql`
     }
   }
 `
+
+// ----------------------
+// Project Images Component
+// ----------------------
+
+const ProjectTImages = ({ images }) => {
+  console.log(images)
+  const renderImages = () => {
+    return images.map((img, i) => (
+      <div className="Project_T__ic_inner_image">
+        <Img
+          fluid={img.childrenImageSharp[0].fluid}
+          className="Project_T__Project_image"
+        />
+      </div>
+    ))
+  }
+
+  return <div>{renderImages()}</div>
+}
 
 // ----------------------
 // Animate Intro
@@ -210,6 +265,7 @@ const AnimatedText = props => {
         .split(!props.delimiter ? " " : props.delimiter)
         .map((word, i) => (
           <AnimatedWord
+            key={i}
             text={word}
             class_name={props.class_name}
             div_type={props.div_type}
