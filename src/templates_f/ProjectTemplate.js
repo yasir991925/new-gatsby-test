@@ -20,6 +20,8 @@ function Template({ data }) {
     type,
     area,
     address,
+    year,
+    Role,
     project_images,
     description,
   } = data.projectsJson
@@ -98,11 +100,7 @@ function Template({ data }) {
                   delimiter="#"
                   class_name="util_op_6"
                 />
-                <AnimatedText
-                  text={"22 November 2020"}
-                  div_type={"h4"}
-                  delimiter="#"
-                />
+                <AnimatedText text={year} div_type={"h4"} delimiter="#" />
               </div>
             </div>
           </div>
@@ -120,11 +118,33 @@ function Template({ data }) {
       <div className="Project_T__image_container">
         <ProjectTImages images={project_images} />
         <div className="Project_T_content_text">
-          <h1 className="accent">{client}</h1>
-          <p>lorem ipsum</p>
-          <hr />
-          <h4>ok this is good</h4>
-          <p>{description}</p>
+          <div>
+            <h1 className="accent PT_client">{client}</h1>
+            <p className="PT_address">{address.replace(/#/g, " ")}</p>
+          </div>
+          <hr className="mt-10" />
+          <div className="Project_T_content_text_container">
+            <div>
+              <span>Type</span>
+              <p>{type}</p>
+            </div>
+            <div>
+              <span>Year</span>
+              <p>{year}</p>
+            </div>
+            <div>
+              <span>Area</span>
+              <p>
+                {area}m<sup>2</sup>
+              </p>
+            </div>
+            <div className="PT_full_column">
+              <span>Work</span>
+              <p>{Role}</p>
+            </div>
+          </div>
+          <hr className="mb-10" />
+          <p className="PT_description">{description}</p>
         </div>
       </div>
     </div>

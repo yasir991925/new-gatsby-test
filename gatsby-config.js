@@ -21,13 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/src/data/projects`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
