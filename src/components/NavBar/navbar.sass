@@ -12,6 +12,8 @@
 
 .navigation__link
 	font-size: 1.125rem
+	@media screen and(max-width: 400px)
+		display: none
 
 .ham
 	cursor: pointer
@@ -32,11 +34,21 @@
 	-ms-user-select: none
 	user-select: none
 	transform: scaleY(0)
+	@media screen and (max-width: 400px)
+		grid-template-columns: 100%
 
 .nav_overlay__link_section, .nav_overlay__info_section
 	display: flex
 	flex-direction: column
 	justify-content: center
+	@media screen and (max-width: 400px)
+		text-align: center
+
+.nav_overlay__info_section
+	@media screen and (max-width: 400px)
+		font-size: 12px
+		align-self: flex-start
+		padding: 0
 
 .nav_overlay__link_section
 	padding-left: 20%
@@ -44,6 +56,8 @@
 		position: relative
 		margin: 20px
 		transition: all 0.3s
+		@media screen and (max-width: 400px)
+			font-size: 2rem
 		&::before
 			position: absolute
 			transition: all 0.3s
@@ -58,6 +72,8 @@
 			opacity: 1
 		&:hover h1
 			transform: translateX(10%)
+	@media screen and (max-width: 400px)
+		padding-left: 0
 
 .nav_overlay_address_group
 	font-family: 'Inter'
@@ -66,5 +82,11 @@
 	h3
 		font-weight: 400
 		font-size: 1.8rem
+		@media screen and(max-width: 400px)
+			font-size: 1.2rem
+	@media screen and(max-width: 400px)
+		max-width: auto
+		margin: 0 auto
+
 .ani
 	opacity: 0

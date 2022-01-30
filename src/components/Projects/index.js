@@ -22,6 +22,8 @@ function Projects({ data, landing }) {
   const tl = gsap.timeline()
   const project_image_deviation_y = 5
 
+  const cols = window.screen.width < 800 ? 1 : 3
+
   useEffect(() => {
     gsap.to(".Project__project_controller__group", {
       scrollTrigger: {
@@ -114,7 +116,7 @@ function Projects({ data, landing }) {
         data={controller_data}
       />
       <ProjectBoard
-        rows={3}
+        rows={cols} // rows should be cols
         active={state}
         data={project_data.filter(d => d.type === state || state === "All")}
       />

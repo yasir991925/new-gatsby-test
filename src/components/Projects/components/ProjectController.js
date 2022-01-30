@@ -13,7 +13,13 @@ const ProjectController = ({ changeState, active, data }) => {
         super_script={d.count}
         key={i}
         active={active === d.type}
-        styleClass={[i < data.length - 1 ? "mr" : ""]}
+        styleClass={[
+          i < data.length - 1
+            ? window.screen.width < 800
+              ? "mb-20"
+              : "mr"
+            : "",
+        ]}
         onClick={() => {
           changeState(d.type)
         }}

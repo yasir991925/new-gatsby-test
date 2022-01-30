@@ -11,19 +11,11 @@
     "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo",
     "thumb": "./images/1.jpeg",
     "featureImg": "./images/1.jpeg",
-    "project_images": [
-      "./images/1.jpeg",
-      "./images/2.jpeg",
-      "./images/3.jpeg",
-      "./images/4.jpeg",
-      "./images/5.jpeg",
-      "./images/6.jpeg",
-      "./images/7.jpeg"
-    ]
+    "project_images": ["./images/1.jpeg", "./images/6.jpeg", "./images/7.jpeg"]
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Office",
     "area": 200000,
     "year": "2020",
@@ -45,7 +37,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Restraunt",
     "area": 200000,
     "year": "2020",
@@ -67,7 +59,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Villa",
     "area": 200000,
     "year": "2020",
@@ -89,7 +81,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Villa",
     "area": 200000,
     "year": "2020",
@@ -111,7 +103,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Restrault",
     "area": 200000,
     "year": "2020",
@@ -133,7 +125,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Hospital",
     "area": 200000,
     "year": "2020",
@@ -155,7 +147,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Hospital",
     "area": 200000,
     "year": "2020",
@@ -177,7 +169,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Office",
     "area": 200000,
     "year": "2020",
@@ -199,7 +191,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Office",
     "area": 200000,
     "year": "2020",
@@ -221,7 +213,7 @@
   },
   {
     "title": "Project 2",
-    "client": "Goldman Saches",
+    "client": "Goldman Sachs",
     "type": "Office",
     "area": 200000,
     "year": "2020",
