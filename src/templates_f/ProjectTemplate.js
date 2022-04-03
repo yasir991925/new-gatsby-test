@@ -216,7 +216,9 @@ const AnimatedWord = ({ text, class_name, div_type }) => {
   const renderCharacter = () => {
     return text
       .split("")
-      .map((ch, i) => <span key={i}>{ch == " " ? "‏‏‎ ‎" : ch}</span>)
+      .map((ch, i) =>
+        ch == " " ? <span key={i}>&nbsp;</span> : <span key={i}>{ch}</span>
+      )
   }
   switch (div_type) {
     case "h1":

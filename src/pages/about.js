@@ -114,7 +114,7 @@ const Member = ({ data, small }) => {
         }
       >
         <h2 className="accent Member__content__name">
-          <b>{first_name}</b> {last_name}
+          <b>{first_name}</b> <b>&nbsp;</b> {last_name}
         </h2>
         {data.designation.map((d, i) => (
           <span key={i}>{d}</span>
