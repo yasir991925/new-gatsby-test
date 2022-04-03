@@ -22,10 +22,14 @@ function Projects({ data, landing }) {
   const tl = gsap.timeline()
   const project_image_deviation_y = 5
 
+  const isBrowser = typeof window !== "undefined"
+
   let cols = 3
 
   useEffect(() => {
-    cols = window && window.screen.width < 800 ? 1 : 3
+    if (isBrowser) {
+      cols = window.screen.width < 800 ? 1 : 3
+    }
     gsap.to(".Project__project_controller__group", {
       scrollTrigger: {
         trigger: ".ProjectBoard",
