@@ -121,7 +121,9 @@ function Projects({ data, landing }) {
         data={controller_data}
       />
       <ProjectBoard
-        rows={cols} // rows should be cols
+        rows={
+          typeof window !== "undefined" && window.screen.width < 800 ? 1 : 3
+        } // rows should be cols
         active={state}
         data={project_data.filter(d => d.type === state || state === "All")}
       />
