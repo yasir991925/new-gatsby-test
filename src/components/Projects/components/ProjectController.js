@@ -15,7 +15,9 @@ const ProjectController = ({ changeState, active, data }) => {
         active={active === d.type}
         styleClass={[
           i < data.length - 1
-            ? window.screen.width < 800
+            ? typeof window !== "undefined" &&
+              window &&
+              window.screen.width < 800
               ? "mb-20"
               : "mr"
             : "",
