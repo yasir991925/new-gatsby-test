@@ -20,16 +20,18 @@ function Projects({ data, landing }) {
   const [state, changeState] = useState("All")
   const animating = useRef(false)
   const tl = gsap.timeline()
-  const project_image_deviation_y = 5
 
-  const isBrowser = typeof window !== "undefined"
-
-  let cols = 3
+  const [cols, changeCols] = useState(null)
 
   useEffect(() => {
-    if (isBrowser) {
-      cols = window.screen.width < 800 ? 1 : 3
+    if ((typeof window !== "undefined" && window.screen.width) < 800) {
+      changeCols(1)
+    } else {
+      changeCols(3)
     }
+  }, [cols])
+
+  useEffect(() => {
     gsap.to(".Project__project_controller__group", {
       scrollTrigger: {
         trigger: ".ProjectBoard",
@@ -43,46 +45,7 @@ function Projects({ data, landing }) {
       boxShadow: "0px 30px 80px -32px rgb(0 0 0 / 79%)",
       border: "none",
     })
-    // animate the images in the main product page
-    // gsap.to(
-    //   gsap.utils.toArray(
-    //     ".ProjectTitle__image_container > a > .gatsby-image-wrapper"
-    //   ),
-    //   {
-    //     scrollTrigger: {
-    //       trigger: ".ProjectBoard",
-    //       start: "top center",
-    //       end: "bottom center",
-    //       scrub: 1,
-    //       markers: true,
-    //     },
-    //     y: `-${project_image_deviation_y}%`,
-    //   }
-    // )
-    // gsap.to(gsap.utils.toArray(".ProjectTitle__image_container"), {
-    //   scrollTrigger: {
-    //     trigger: ".ProjectBoard",
-    //     start: "top center",
-    //     end: "bottom center",
-    //     scrub: 1,
-    //     markers: true,
-    //   },
-    //   y: `${project_image_deviation_y}`,
-    // })
-  }, [])
-
-  const animteTilesXAxis = () => {
-    gsap.to(gsap.utils.toArray(".ProjectTitle__image_container__image"), {
-      scrollTrigger: {
-        trigger: ".ProjectBoard",
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-        markers: true,
-      },
-      y: "-20%",
-    })
-  }
+  }, [cols])
 
   const animateProjectTilesOut = cb => {
     tl.to(".ProjectTile", {
@@ -110,7 +73,7 @@ function Projects({ data, landing }) {
     })
   }
 
-  return (
+  return cols ? (
     <div className="section project_section">
       <h1 className="accent_heading ">
         {landing ? "Featured Projects" : "Projects"}
@@ -121,14 +84,12 @@ function Projects({ data, landing }) {
         data={controller_data}
       />
       <ProjectBoard
-        rows={
-          typeof window !== "undefined" && window.screen.width < 800 ? 1 : 3
-        } // rows should be cols
+        rows={cols} // rows should be cols
         active={state}
         data={project_data.filter(d => d.type === state || state === "All")}
       />
     </div>
-  )
+  ) : null
 }
 
 export default Projects

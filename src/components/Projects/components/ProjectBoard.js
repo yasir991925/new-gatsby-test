@@ -61,7 +61,7 @@ const ProjectBoard = ({ data, active, rows }) => {
             name={d.name}
             area={d.area}
             type={d.type}
-            key={d.id}
+            key={Math.random() * 10000}
             slug={d.slug}
             openProject={openProject}
           />
