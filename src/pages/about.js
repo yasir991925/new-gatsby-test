@@ -5,65 +5,16 @@ import "../components/About/about.sass"
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { graphql } from "gatsby"
 
-const data = {
-  founders: [
-    {
-      name: "Frank Underwood",
-      designation: ["Proproetor", "Principal Architect"],
-      img: "https://images.unsplash.com/photo-1612213467906-20440d15bdb8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTkwfHxwZXJzb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      name: "Claire Underwood",
-      designation: ["Principal Architect"],
-      img: "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
-    },
-  ],
-  team: [
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-    {
-      name: "John Doe",
-      designation: ["Architect"],
-      img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
-    },
-  ],
-}
-
-function About() {
+function About({ data }) {
+  const founders = data.allAboutJson.nodes.filter(d => d.type === "founders")
+  const team = data.allAboutJson.nodes.filter(d => d.type === "team")
   const renderFounders = () => {
-    return data.founders.map((f, i) => <Member data={f} small={false} />)
+    return founders.map((f, i) => <Member data={f} small={false} key={i} />)
   }
   const renderTeam = () => {
-    return data.team.map((t, i) => <Member data={t} small={true} />)
+    return team.map((t, i) => <Member data={t} small={true} key={i} />)
   }
 
   useEffect(() => {
@@ -102,6 +53,7 @@ function About() {
 // ----------
 
 const Member = ({ data, small }) => {
+  console.log(data, small)
   const first_name = data.name.split(" ")[0]
   const last_name = data.name.split(" ").slice(1).join(" ")
   const background_name_text_ref = useRef(null)
@@ -173,3 +125,17 @@ const Member = ({ data, small }) => {
 }
 
 export default About
+
+export const query = graphql`
+  {
+    allAboutJson {
+      nodes {
+        img
+        name
+        type
+        pos
+        designation
+      }
+    }
+  }
+`
