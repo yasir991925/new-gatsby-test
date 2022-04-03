@@ -16,4 +16,6 @@
   --b-color: var(--b-white);
   --back-color: var(--back-white);
   --border-color: var(--border-white);
+
+  --mobile-max-width: 400px;
 }

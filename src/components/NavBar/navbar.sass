@@ -1,3 +1,5 @@
+@import "/static/css/colors.css"
+
 .navigation
 	position: relative
 	display: flex
@@ -12,7 +14,7 @@
 
 .navigation__link
 	font-size: 1.125rem
-	@media screen and(max-width: 400px)
+	@media screen and(max-width: 500px)
 		display: none
 
 .ham
@@ -34,18 +36,18 @@
 	-ms-user-select: none
 	user-select: none
 	transform: scaleY(0)
-	@media screen and (max-width: 400px)
+	@media screen and (max-width: 500px)
 		grid-template-columns: 100%
 
 .nav_overlay__link_section, .nav_overlay__info_section
 	display: flex
 	flex-direction: column
 	justify-content: center
-	@media screen and (max-width: 400px)
+	@media screen and (max-width: 500px)
 		text-align: center
 
 .nav_overlay__info_section
-	@media screen and (max-width: 400px)
+	@media screen and (max-width: 500px)
 		font-size: 12px
 		align-self: flex-start
 		padding: 0
@@ -56,7 +58,7 @@
 		position: relative
 		margin: 20px
 		transition: all 0.3s
-		@media screen and (max-width: 400px)
+		@media screen and (max-width: 500px)
 			font-size: 2rem
 		&::before
 			position: absolute
@@ -72,7 +74,7 @@
 			opacity: 1
 		&:hover h1
 			transform: translateX(10%)
-	@media screen and (max-width: 400px)
+	@media screen and (max-width: 500px)
 		padding-left: 0
 
 .nav_overlay_address_group
@@ -82,9 +84,9 @@
 	h3
 		font-weight: 400
 		font-size: 1.8rem
-		@media screen and(max-width: 400px)
+		@media screen and(max-width: 500px)
 			font-size: 1.2rem
-	@media screen and(max-width: 400px)
+	@media screen and(max-width: 500px)
 		max-width: auto
 		margin: 0 auto
 
