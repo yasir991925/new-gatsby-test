@@ -22,7 +22,7 @@ function Projects({ data, landing }) {
   const tl = gsap.timeline()
   const project_image_deviation_y = 5
 
-  let cols = window && window.screen.width < 800 ? 1 : 3
+  let cols = 3
 
   useEffect(() => {
     cols = window && window.screen.width < 800 ? 1 : 3
