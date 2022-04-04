@@ -71,7 +71,7 @@ const Member = ({ data, small }) => {
           start: "top bottom",
           end: "bottom top",
           scrub: 1,
-          markers: true,
+          //   markers: true,
         },
         x: "-15%",
       })
