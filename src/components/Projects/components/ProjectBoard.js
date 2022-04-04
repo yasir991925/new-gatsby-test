@@ -7,7 +7,8 @@ import ProjectTile from "./ProjectTile"
 // PROJECT BOARD
 // ------------------------------------------------
 
-const ProjectBoard = ({ data, active, rows }) => {
+const ProjectBoard = ({ data, active, cols }) => {
+  const rows = cols
   const changePage = id => {
     navigate(`/projects/${id}`)
   }

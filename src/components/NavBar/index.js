@@ -5,8 +5,22 @@ import HamBurger from "/static/HamBurger.svg"
 import SuperScript from "../common_components/SuperScriptText"
 import { Link } from "gatsby"
 import gsap from "gsap"
+import { useStaticQuery, graphql } from "gatsby"
 
 function Nav() {
+  const data = useStaticQuery(graphql`
+    {
+      allProjectsJson {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+
+  const projects_count =
+    data && data.allProjectsJson && data.allProjectsJson.nodes.length
+
   const [overlay_open, setOverlayOpen] = useState(false)
   useEffect(() => {
     window.onscroll = function () {
@@ -108,7 +122,7 @@ function Nav() {
             <span className="navigation__link">About us</span>
           </Link>
           <Link to="/projects/">
-            <SuperScript text={"Projects"} super_script={"144+"} />
+            <SuperScript text={"Projects"} super_script={projects_count} />
           </Link>
           <span className="navigation__link">Contact</span>
         </div>

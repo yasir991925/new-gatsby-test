@@ -71,19 +71,24 @@ const Member = ({ data, small }) => {
           start: "top bottom",
           end: "bottom top",
           scrub: 1,
-          //   markers: true,
         },
         x: "-15%",
       })
-      //   gsap.to(image_ref.current.imageRef.placeholderRef.current, {
-      //     scrollTrigger: {
-      //       trigger: image_ref.current,
-      //       start: "top center",
-      //       end: "bottom center",
-      //       scrub: 1,
-      //     },
-      //     y: "0%",
-      //   })
+      //   new gsap.timeline()
+      //     .set(".Member_big > picture > img", {
+      //       y: "4%",
+      //       scale: 1.2,
+      //     })
+      //     .to(".Member_big > picture > img", {
+      //       scrollTrigger: {
+      //         trigger: ".Member_big",
+      //         start: "top bottom",
+      //         end: "bottom center",
+      //         scrub: 1,
+      //         markers: true,
+      //       },
+      //       y: "-2%",
+      //     })
     }
   }, [])
 
@@ -105,7 +110,7 @@ const Member = ({ data, small }) => {
       {!small ? renderBackScrollName() : null}
       <Img
         fluid={data.img.childrenImageSharp[0].fluid}
-        // ref={image_ref}
+        ref={image_ref}
         className={
           "Member__image_container" + (small ? " Member__small" : " Member_big")
         }

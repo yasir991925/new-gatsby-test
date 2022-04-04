@@ -21,13 +21,16 @@ function Projects({ data, landing }) {
   const animating = useRef(false)
   const tl = gsap.timeline()
 
-  const [cols, changeCols] = useState(null)
-
+  const [cols, changeCols] = useState(0)
   useEffect(() => {
-    if ((typeof window !== "undefined" && window.screen.width) < 800) {
-      changeCols(1)
-    } else {
-      changeCols(3)
+    if (typeof window !== "undefined") {
+      if (window.innerWidth <= 500) {
+        changeCols(1)
+      } else if (window.innerWidth <= 1000) {
+        changeCols(2)
+      } else {
+        changeCols(3)
+      }
     }
   }, [cols])
 
@@ -84,7 +87,7 @@ function Projects({ data, landing }) {
         data={controller_data}
       />
       <ProjectBoard
-        rows={cols} // rows should be cols
+        cols={cols}
         active={state}
         data={project_data.filter(d => d.type === state || state === "All")}
       />
