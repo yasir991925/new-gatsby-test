@@ -6,6 +6,7 @@ import "../components/About/about.sass"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 function About({ data }) {
   const founders = data.allAboutJson.nodes.filter(d => d.type === "founders")
@@ -33,6 +34,7 @@ function About({ data }) {
   return (
     <div className="About">
       <Nav />
+
       <div className="util_flex util_text_center accent About__section">
         <h2 className="accent">Our Philosophy</h2>
         <h1 className="accent">
@@ -40,8 +42,10 @@ function About({ data }) {
           SPLENDID SPACES.
         </h1>
       </div>
+
       <h1 className="big_heading accent util_text_center space">Founders</h1>
       <div className="util_flex Member__founders">{renderFounders()}</div>
+
       <h1 className="big_heading accent util_text_center space">Team</h1>
       <div className="util_flex_h Member__team space">{renderTeam()}</div>
     </div>
@@ -53,7 +57,6 @@ function About({ data }) {
 // ----------
 
 const Member = ({ data, small }) => {
-  console.log(data, small)
   const first_name = data.name.split(" ")[0]
   const last_name = data.name.split(" ").slice(1).join(" ")
   const background_name_text_ref = useRef(null)
@@ -65,49 +68,48 @@ const Member = ({ data, small }) => {
       gsap.to(background_name_text_ref.current, {
         scrollTrigger: {
           trigger: member_ref.current,
-          start: "top center",
-          end: "bottom center",
+          start: "top bottom",
+          end: "bottom top",
           scrub: 1,
+          markers: true,
         },
         x: "-15%",
       })
-      gsap.to(image_ref.current, {
-        scrollTrigger: {
-          trigger: image_ref.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
-        y: "0%",
-      })
+      //   gsap.to(image_ref.current.imageRef.placeholderRef.current, {
+      //     scrollTrigger: {
+      //       trigger: image_ref.current,
+      //       start: "top center",
+      //       end: "bottom center",
+      //       scrub: 1,
+      //     },
+      //     y: "0%",
+      //   })
     }
   }, [])
 
+  const renderBackScrollName = () => {
+    return (
+      <div className="Member__background_name util_flex">
+        <span
+          className="Member__background_name_text"
+          ref={background_name_text_ref}
+        >
+          {data.name + " / " + data.name + " / " + data.name}
+        </span>
+      </div>
+    )
+  }
+
   return (
     <div className="Member util_flex" ref={member_ref}>
-      {!small ? (
-        <div className="Member__background_name util_flex">
-          <span
-            className="Member__background_name_text"
-            ref={background_name_text_ref}
-          >
-            {data.name + " / " + data.name + " / " + data.name}
-          </span>
-        </div>
-      ) : null}
-      <div
+      {!small ? renderBackScrollName() : null}
+      <Img
+        fluid={data.img.childrenImageSharp[0].fluid}
+        // ref={image_ref}
         className={
-          "Member__image_container util_flex_h" +
-          (small ? " Member__small" : "")
+          "Member__image_container" + (small ? " Member__small" : " Member_big")
         }
-      >
-        <img
-          src={data.img}
-          alt={data.name}
-          ref={image_ref}
-          className={!small ? "Member__image_container_img_big" : ""}
-        />
-      </div>
+      />
       <div
         className={
           "Member__content util_flex" + (!small ? " Member__content_big" : "")
@@ -130,7 +132,13 @@ export const query = graphql`
   {
     allAboutJson {
       nodes {
-        img
+        img {
+          childrenImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         name
         type
         pos
