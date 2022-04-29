@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import ProjectBoard from "./components/ProjectBoard"
 import ProjectController from "./components/ProjectController"
+import Footer from "../Footer"
 
 // ------------------------------------------------
 // PROJECTS (MAIN COMPONENT)
@@ -77,21 +78,24 @@ function Projects({ data, landing }) {
   }
 
   return cols ? (
-    <div className="section project_section">
-      <h1 className="accent_heading ">
-        {landing ? "Featured Projects" : "Projects"}
-      </h1>
-      <ProjectController
-        changeState={changeStateWrapper}
-        active={state}
-        data={controller_data}
-      />
-      <ProjectBoard
-        cols={cols}
-        active={state}
-        data={project_data.filter(d => d.type === state || state === "All")}
-      />
-    </div>
+    <>
+      <div className="section project_section">
+        <h1 className="accent_heading ">
+          {landing ? "Featured Projects" : "Projects"}
+        </h1>
+        <ProjectController
+          changeState={changeStateWrapper}
+          active={state}
+          data={controller_data}
+        />
+        <ProjectBoard
+          cols={cols}
+          active={state}
+          data={project_data.filter(d => d.type === state || state === "All")}
+        />
+      </div>
+      <Footer />
+    </>
   ) : null
 }
 

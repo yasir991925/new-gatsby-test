@@ -8,6 +8,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import Footer from "../components/Footer"
+
 function About({ data }) {
   const founders = data.allAboutJson.nodes.filter(d => d.type === "founders")
   const team = data.allAboutJson.nodes.filter(d => d.type === "team")
@@ -48,6 +50,8 @@ function About({ data }) {
 
       <h1 className="big_heading accent util_text_center space">Team</h1>
       <div className="util_flex_h Member__team space">{renderTeam()}</div>
+
+      <Footer />
     </div>
   )
 }

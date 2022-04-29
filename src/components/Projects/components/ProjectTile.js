@@ -36,8 +36,13 @@ const ProjectTile = props => {
     `
     return (
       <ImageContainerDOM ref={ImageOverlayDOM} className="imageOverlay">
-        <Img fluid={fluid} style={{ position: "relative", width: "100%" }} />
-        {/* <img src={fluid.src} style={{ position: "relative", width: "120%" }} /> */}
+        <Img
+          fluid={fluid}
+          style={{
+            position: "relative",
+            width: "100%",
+          }}
+        />
       </ImageContainerDOM>
     )
   }

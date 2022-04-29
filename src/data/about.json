@@ -2,31 +2,31 @@
   {
     "id": 1,
     "type": "founders",
-    "name": "Frank Underwood",
-    "designation": ["Proproetor", "Principal Architect"],
+    "name": "Ranjan Shukla",
+    "designation": ["Proprietor", "Principal Architect", "B-Arch"],
     "img": "./images/person.jpeg",
     "pos": 1
   },
   {
     "id": 2,
     "type": "founders",
-    "name": "Mark Grizzle",
-    "designation": ["Proproetor", "Principal Architect"],
+    "name": "Anupama Shukla",
+    "designation": ["Principal Architect", "B-Arch", "M.Arch(Landscape)"],
     "img": "./images/person.jpeg",
     "pos": 2
   },
   {
     "id": 3,
     "type": "team",
-    "name": "Frank Underwood",
-    "designation": ["Architect"],
+    "name": "Pradeep Sharma",
+    "designation": ["SENIOR ARCHITECT", "B-Arch"],
     "img": "./images/person.jpeg",
     "pos": 3
   },
   {
     "id": 4,
     "type": "team",
-    "name": "Frank Underwood",
+    "name": "Puklit Yadav",
     "designation": ["Architect"],
     "img": "./images/person.jpeg",
     "pos": 3
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "type": "team",
-    "name": "Frank Underwood",
+    "name": "Shashank Sonkar",
     "designation": ["Architect"],
     "img": "./images/person.jpeg",
     "pos": 3
@@ -42,8 +42,72 @@
   {
     "id": 6,
     "type": "team",
-    "name": "Frank Underwood",
+    "name": "Rishu Maurya",
     "designation": ["Architect"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 7,
+    "type": "team",
+    "name": "Himanshi Singh",
+    "designation": ["Architect"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 8,
+    "type": "team",
+    "name": "Avantika Singh",
+    "designation": ["Interior Designer"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 9,
+    "type": "team",
+    "name": "Anentt Shukla",
+    "designation": ["Architect"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 10,
+    "type": "team",
+    "name": "Ashita Singth",
+    "designation": ["Architect"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 6,
+    "type": "team",
+    "name": "Pragya Patel",
+    "designation": ["Structure Engineer"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 6,
+    "type": "team",
+    "name": "Ravikant Verma",
+    "designation": ["Civil Engineer"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 6,
+    "type": "team",
+    "name": "Ayush Singh",
+    "designation": ["Office Manager"],
+    "img": "./images/person.jpeg",
+    "pos": 3
+  },
+  {
+    "id": 6,
+    "type": "team",
+    "name": "Rajesh Kannaujiya",
+    "designation": ["Office Attendent"],
     "img": "./images/person.jpeg",
     "pos": 3
   }
